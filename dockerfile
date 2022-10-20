@@ -1,3 +1,4 @@
-FROM openjdk 11
-COPY . /target
-ENTRYPOINT ["java","-jar","guava-28.2-android.jar"]
+FROM openjdk:11
+    ADD target/jenkins-pipeline-example.jar jenkins-pipeline-example.jar
+    ENTRYPOINT ["java", "-jar","jenkins-pipeline-example.jar"]
+    EXPOSE 1500
